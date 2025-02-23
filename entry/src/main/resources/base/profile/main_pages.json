@@ -1,0 +1,10 @@
+{
+  "src": [
+    "pages/Page1_TaskList",
+    "pages/Page3_Scroll",
+    "pages/Page4_Stack",
+    "pages/Page5_RelativeContainer",
+    "pages/Page2_CreateTask",
+    "pages/Page6_StateTEST"
+  ]
+}
