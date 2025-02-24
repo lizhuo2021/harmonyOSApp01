@@ -1,21 +1,22 @@
 import App from '@system.app'
 import { TaskStatus } from "../view/TaskStatus"
 import { TaskItem } from "../view/TaskItem"
-
-import CreateTaskListMockData, {TaskModel} from '../viewmodel/TaskModel';
+import { router, Router} from '@kit.ArkUI'
+import CreateTaskListMockData, {TaskModel, TaskModelStatus} from '../viewmodel/TaskModel';
 import { getRandomDateByCurrentMonth } from '../utils/DateFormat';
 import { StartOptions } from '@kit.AbilityKit';
 
-@Entry
+let storage = LocalStorage.getShared()
+
+@Entry(storage)
 @Component
 struct Page1_TaskList {
 
-  @State tasks: Array<TaskModel> = [];
+  @StorageLink("tasks") tasks: Array<TaskModel> = [];
 
   // 组件加载完毕后
   aboutToAppear(): void {
     this.tasks = CreateTaskListMockData.initData()
-    console.log(`${JSON.stringify(this.tasks)}`)
   }
 
   build() {
@@ -61,7 +62,7 @@ struct Page1_TaskList {
               .width("100%")
 
               // 列表部分
-              TaskItem({tasks: this.tasks})
+              TaskItem({tasks: this.tasks, byStatus: TaskModelStatus.doing})
 
 
             }.width("100%")
@@ -95,6 +96,9 @@ struct Page1_TaskList {
         bottom: { anchor: "__container__", align: VerticalAlign.Bottom }
       })
       .offset({ x: -30, y: -80 })
+      .onClick(()=>{
+        router.pushUrl({url:"pages/Page_CreateTask"})
+      })
     }
 
   }

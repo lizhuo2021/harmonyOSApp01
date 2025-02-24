@@ -1,6 +1,6 @@
-import { StateChildren } from '../view/StateChildren';
+import { StateChildren } from '../../view/StateChildren';
 import { StartOptions } from '@kit.AbilityKit';
-import { UserModel } from '../viewmodel/UserModel';
+import { UserModel } from '../../viewmodel/UserModel';
 
 @Entry
 @Component

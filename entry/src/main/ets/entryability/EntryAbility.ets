@@ -5,6 +5,12 @@ import { window } from '@kit.ArkUI';
 const DOMAIN = 0x0000;
 
 export default class EntryAbility extends UIAbility {
+
+  // para: Record<string, string> = {
+  //   'windowStage': "在windowStage保存的值"
+  // };
+  // storage: LocalStorage = new LocalStorage(this.para);
+
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     this.context.getApplicationContext().setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
@@ -18,7 +24,14 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    windowStage.loadContent('pages/Page1_TaskList', (err) => {
+    // EntryAbility层级的LocalStorage
+    let para: Record<string, string> = {
+      'windowStage': "在windowStage保存的值"
+    };
+    let storage: LocalStorage = new LocalStorage(para);
+
+    windowStage.loadContent('pages/Page_TaskList', (err) => {
+    // windowStage.loadContent('pages/PageTestStorage', storage, (err) => {
       if (err.code) {
         hilog.error(DOMAIN, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
         return;

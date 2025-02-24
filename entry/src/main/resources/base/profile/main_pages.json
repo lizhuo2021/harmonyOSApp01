@@ -1,10 +1,16 @@
 {
   "src": [
-    "pages/Page1_TaskList",
-    "pages/Page3_Scroll",
-    "pages/Page4_Stack",
-    "pages/Page5_RelativeContainer",
-    "pages/Page2_CreateTask",
-    "pages/Page6_StateTEST"
+    "pages/Page_TaskList",
+    "pages/Test/PageTestScroll",
+    "pages/Test/PageTestStack",
+    "pages/Test/PageTestRelativeContainer",
+    "pages/Page_CreateTask",
+    "pages/Test/PageTestState",
+    "pages/Page_TaskDetail",
+    "pages/Test/PageTest_DateInStateProp",
+    "pages/Test/PageTestStorage",
+    "pages/Test/PageTestObjectLink",
+    "pages/Test/PageTestProvideConsume",
+    "pages/Page_SortTaskList"
   ]
 }

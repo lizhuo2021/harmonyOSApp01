@@ -93,3 +93,11 @@ export function getRandomDateByCurrentMonth() {
   return `${year}-${String(month).padStart(2, "0")}-${String(randomDay).padStart(2, "0")}`
 
 }
+export function formatHHMM(value: number) {
+  if (!value) {
+    return "00"
+  }
+  let ov = JSON.stringify(value)
+  ov = ov.padStart(2, "0")
+  return ov
+}

@@ -15,21 +15,20 @@ export enum TaskModelStatus {
 
 export enum TaskModelType {
   //   个人任务
-  personal,
+  personal = "personal",
   //   工作任务
-  work,
+  work = "work",
 }
-
 
 export enum TaskModelTag {
   //  工作
-  work,
+  work = "work",
   //   生活
-  life,
-  //   虚席
-  study,
+  life = "life",
+  //   学习
+  study = "study",
   //   娱乐
-  play
+  play = "play",
 }
 
 
@@ -40,19 +39,21 @@ export class TaskModel {
   taskDate: string = ""
   taskStartTime: string = ""
   taskEndTime: string = ""
-  taskDesc: string = ""
+  taskDetailContent: string = ""
   taskType: TaskModelType = TaskModelType.personal
   taskTag: TaskModelTag = TaskModelTag.work
 
   constructor(id: string, taskName: string, taskDate: string,
-    taskStartTime: string, taskEndTime: string, taskDesc: string, taskType: TaskModelType,
-    taskTag: TaskModelTag) {
+    taskStartTime: string, taskEndTime: string, taskDetailContent: string,
+    taskType: TaskModelType,
+    taskTag: TaskModelTag
+  ) {
     this.id = id
     this.taskName = taskName
     this.taskDate = taskDate
     this.taskStartTime = taskStartTime
     this.taskEndTime = taskEndTime
-    this.taskDesc = taskDesc
+    this.taskDetailContent = taskDetailContent
     this.taskType = taskType
     this.taskTag = taskTag
 
