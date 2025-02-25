@@ -11,6 +11,9 @@
     "pages/Test/PageTestStorage",
     "pages/Test/PageTestObjectLink",
     "pages/Test/PageTestProvideConsume",
-    "pages/Page_SortTaskList"
+    "pages/Page_SortTaskList",
+    "pages/Page_Exercises01",
+    "pages/Test/PageTestObservedAndObjectLink",
+    "pages/Test/PageTestPropAndLink"
   ]
 }

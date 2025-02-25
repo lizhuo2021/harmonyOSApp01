@@ -24,14 +24,15 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    // EntryAbility层级的LocalStorage
-    let para: Record<string, string> = {
-      'windowStage': "在windowStage保存的值"
-    };
-    let storage: LocalStorage = new LocalStorage(para);
+    // // EntryAbility层级的LocalStorage
+    // let para: Record<string, string> = {
+    //   'windowStage': "在windowStage保存的值"
+    // };
+    // let storage: LocalStorage = new LocalStorage(para);
 
-    windowStage.loadContent('pages/Page_TaskList', (err) => {
+    // windowStage.loadContent('pages/Page_TaskList', (err) => {
     // windowStage.loadContent('pages/PageTestStorage', storage, (err) => {
+    windowStage.loadContent('pages/Page_Exercises01', (err) => {
       if (err.code) {
         hilog.error(DOMAIN, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err));
         return;
